@@ -1,7 +1,6 @@
 from math import pi
 
 __all__ = [
-    'define_constants',
     'meter', 'kg', 'sec', 'amp', 'kelvin', 'mol',
     'hertz', 'coulomb', 'joule', 'newton', 'tesla', 'volt',
     'pascal', 'farad', 'henry', 'ohm', 'watt',
@@ -21,25 +20,26 @@ __all__ = [
     'me', 'mu0', 'pi', 'planck', 're', 'twopi', 'mrad',
     'a0', 'alpha0', 'eV', 'keV', 'MeV', 'GeV' ]
 
-def define_constants(internal_units='AU'):
+def define_constants(internal_units):
     global meter, kg, sec, amp, kelvin, mol
     global hertz, coulomb, joule, newton, tesla, volt
     global pascal, farad, henry, ohm, watt
     global cm, mm, um, nm, nm, pm, fm
     global gram
     global ms, us, ns, ps, fs
-    global mK
     global kHz, MHz, GHz, THz
-    global uC, nC, pC, fC
-    global kV, MV, GV
-    global mJ, kJ
-    global mOhm, kOhm
-    global uF, nF, pF
+    global mK
+    global mC, uC, nC, pC, fC
+    global kV, MV, GV, TV
+    global GJ, MJ, kJ, mJ, uJ, nJ, pJ
+    global GOhm, MOhm, kOhm, mOhm, uOhm, nOhm, pOhm, fOhm
+    global mF, uF, nF, pF, fF
     global uH, nH, pH
-    global NA, R_gas, Torr, atm, bar
-    global c_light, c2, deg, eplus, eps0, hbar, kB, m_amu, mbar
-    global me, mu0, pi, planck, re, twopi, mrad
-    global a0, alpha0, eV, keV, MeV, GeV
+    global rad, sr, mrad, urad, deg, twopi, fourpi
+    global NA, R_gas, Torr, atm, bar, c_light, c2
+    global eplus, eps0, hbar, kB, m_amu, mbar
+    global me, mu0, planck, re, a0, alpha0
+    global eV, keV, MeV, GeV, TeV
 
     if internal_units == 'SI':
         meter = 1.0
@@ -49,7 +49,7 @@ def define_constants(internal_units='AU'):
         kelvin = 1.0
         mol = 1.0
 
-    elif internal_units == 'AU':
+    elif internal_units == 'Hartree':
         meter = 1.0/(5.291772192e-11)
         kg = 1.0/(9.10938215e-31)
         sec = 1.0/(2.418884326505e-17)
@@ -104,11 +104,12 @@ def define_constants(internal_units='AU'):
     ns = 1e-9*sec
     ps = 1e-12*sec
     fs = 1e-15*sec
-    mK = 1e-3*kelvin
     kHz = 1e3*hertz
     MHz = 1e6*hertz
     GHz = 1e9*hertz
     THz = 1e12*hertz
+    mK = 1e-3*kelvin
+    mC = 1e-3*coulomb
     uC = 1e-6*coulomb
     nC = 1e-9*coulomb
     pC = 1e-12*coulomb
@@ -116,16 +117,39 @@ def define_constants(internal_units='AU'):
     kV = 1e3*volt
     MV = 1e6*volt
     GV = 1e9*volt
-    mJ = 1e-3*joule
+    TV = 1e12*volt
+    GJ = 1e9*joule
+    MJ = 1e6*joule
     kJ = 1e3*joule
-    mOhm = 1e-3*ohm
+    mJ = 1e-3*joule
+    uJ = 1e-6*joule
+    nJ = 1e-9*joule
+    pJ = 1e-12*joule
+    GOhm = 1e9*ohm
+    MOhm = 1e6*ohm
     kOhm = 1e3*ohm
+    mOhm = 1e-3*ohm
+    uOhm = 1e-6*ohm
+    nOhm = 1e-9*ohm
+    pOhm = 1e-12*ohm
+    fOhm = 1e-15*ohm
+    mF = 1e-3*farad
     uF = 1e-6*farad
     nF = 1e-9*farad
     pF = 1e-12*farad
+    fF = 1e-15*farad
     uH = 1e-6*henry
     nH = 1e-9*henry
     pH = 1e-12*henry
+
+    # geometric constants
+    rad = 1.0
+    sr = 1.0
+    mrad = 1e-3
+    urad = 1e-6
+    deg = pi/180
+    twopi = 2*pi
+    fourpi = 4*pi
 
     # physical constants
     NA = 6.0221415e23
@@ -135,7 +159,7 @@ def define_constants(internal_units='AU'):
     bar = 1e5*pascal
     c_light = 299792458.0*meter/sec
     c2 = c_light**2
-    deg = pi/180
+
     eplus = 1.602176565e-19*coulomb
     eps0 = 8.854187817e-12*coulomb/(volt*meter)
     hbar = 1.054571725e-34*joule*sec
@@ -146,13 +170,13 @@ def define_constants(internal_units='AU'):
     mu0 = 4*pi*1e-7*henry/meter
     planck = hbar*2*pi
     re = (eplus**2/(me*c_light**2))/(4*pi*eps0)
-    twopi = 2*pi
-    mrad = 1e-3
     a0 = hbar**2/(me*eplus**2)
     alpha0 = (1/(4*pi*eps0))*(eplus**2/(hbar*c_light))
+
     eV = eplus*volt
     keV = 1e3*eV
     MeV = 1e6*eV
     GeV = 1e9*eV
+    TeV = 1e12*eV
 
 define_constants('SI')
