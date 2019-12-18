@@ -7,18 +7,19 @@ __all__ = [
     'cm', 'mm', 'um', 'nm', 'pm', 'fm',
     'gram',
     'ms', 'us', 'ns', 'ps', 'fs',
-    'mK',
     'kHz', 'MHz', 'GHz', 'THz',
-    'uC', 'nC', 'pC', 'fC',
-    'kV', 'MV', 'GV',
-    'mJ', 'kJ',
-    'mOhm', 'kOhm',
-    'uF', 'nF', 'pF',
+    'mK',
+    'mC', 'uC', 'nC', 'pC', 'fC',
+    'kV', 'MV', 'GV', 'TV',
+    'GJ', 'MJ', 'kJ', 'mJ', 'uJ', 'nJ', 'pJ',
+    'GOhm', 'MOhm', 'kOhm', 'mOhm', 'uOhm', 'nOhm', 'pOhm', 'fOhm',
+    'mF', 'uF', 'nF', 'pF', 'fF',
     'uH', 'nH', 'pH',
-    'NA', 'R_gas', 'Torr','atm', 'bar',
-    'c_light', 'c2', 'deg', 'eplus', 'eps0', 'hbar', 'kB', 'm_amu', 'mbar',
-    'me', 'mu0', 'pi', 'planck', 're', 'twopi', 'mrad',
-    'a0', 'alpha0', 'eV', 'keV', 'MeV', 'GeV' ]
+    'rad', 'sr', 'mrad', 'urad', 'deg', 'pi', 'twopi', 'fourpi',
+    'NA', 'R_gas', 'Torr','atm', 'bar', 'c_light', 'c2',
+    'eplus', 'eps0', 'hbar', 'kB', 'm_amu', 'mbar',
+    'me', 'mu0', 'planck', 're', 'a0', 'alpha0',
+    'eV', 'keV', 'MeV', 'GeV', 'TeV' ]
 
 def define_constants(internal_units):
     global meter, kg, sec, amp, kelvin, mol
