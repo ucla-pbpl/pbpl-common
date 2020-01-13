@@ -11,7 +11,7 @@ __all__ = [
     'mK',
     'mC', 'uC', 'nC', 'pC', 'fC',
     'kV', 'MV', 'GV', 'TV',
-    'GJ', 'MJ', 'kJ', 'mJ', 'uJ', 'nJ', 'pJ',
+    'GJ', 'MJ', 'kJ', 'mJ', 'uJ', 'nJ', 'pJ', 'fJ', 'aJ',
     'GOhm', 'MOhm', 'kOhm', 'mOhm', 'uOhm', 'nOhm', 'pOhm', 'fOhm',
     'mF', 'uF', 'nF', 'pF', 'fF',
     'uH', 'nH', 'pH',
@@ -19,7 +19,7 @@ __all__ = [
     'NA', 'R_gas', 'Torr','atm', 'bar', 'c_light', 'c2',
     'eplus', 'eps0', 'hbar', 'kB', 'm_amu', 'mbar',
     'me', 'mu0', 'planck', 're', 'a0', 'alpha0',
-    'eV', 'keV', 'MeV', 'GeV', 'TeV' ]
+    'eV', 'keV', 'MeV', 'GeV', 'TeV', 'meV' ]
 
 def define_constants(internal_units):
     global meter, kg, sec, amp, kelvin, mol
@@ -32,7 +32,7 @@ def define_constants(internal_units):
     global mK
     global mC, uC, nC, pC, fC
     global kV, MV, GV, TV
-    global GJ, MJ, kJ, mJ, uJ, nJ, pJ
+    global GJ, MJ, kJ, mJ, uJ, nJ, pJ, fJ, aJ
     global GOhm, MOhm, kOhm, mOhm, uOhm, nOhm, pOhm, fOhm
     global mF, uF, nF, pF, fF
     global uH, nH, pH
@@ -40,7 +40,7 @@ def define_constants(internal_units):
     global NA, R_gas, Torr, atm, bar, c_light, c2
     global eplus, eps0, hbar, kB, m_amu, mbar
     global me, mu0, planck, re, a0, alpha0
-    global eV, keV, MeV, GeV, TeV
+    global eV, keV, MeV, GeV, TeV, meV
 
     if internal_units == 'SI':
         meter = 1.0
@@ -126,6 +126,8 @@ def define_constants(internal_units):
     uJ = 1e-6*joule
     nJ = 1e-9*joule
     pJ = 1e-12*joule
+    fJ = 1e-15*joule
+    aJ = 1e-18*joule
     GOhm = 1e9*ohm
     MOhm = 1e6*ohm
     kOhm = 1e3*ohm
@@ -179,5 +181,6 @@ def define_constants(internal_units):
     MeV = 1e6*eV
     GeV = 1e9*eV
     TeV = 1e12*eV
+    meV = 1e-3*eV
 
 define_constants('SI')
