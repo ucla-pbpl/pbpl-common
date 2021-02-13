@@ -9,11 +9,11 @@ def setup_plot():
     mpl.rc('mathtext', fontset='cm')
     mpl.rc('pdf', use14corefonts=True)
     mpl.rc('lines', linewidth=0.8)
-    mpl.rc('xtick.major', size=4)
-    mpl.rc('ytick.major', size=4)
+    mpl.rc('xtick.major', size=4, width=0.6)
+    mpl.rc('ytick.major', size=4, width=0.6)
     mpl.rc('xtick', direction='in', top=True)
-    mpl.rc('xtick.minor', size=2)
-    mpl.rc('ytick.minor', size=2)
+    mpl.rc('xtick.minor', size=2, width=0.6)
+    mpl.rc('ytick.minor', size=2, width=0.6)
     mpl.rc('ytick', direction='in', right=True)
     mpl.rc('legend', fontsize=7.0)
     mpl.rc('legend', labelspacing=0.25)
@@ -41,6 +41,10 @@ def gen_cdict(red, green, blue, midpoint, frac):
 
 blue_cmap = LinearSegmentedColormap(
     'pbpl_blue_cmap', segmentdata=gen_cdict(0, 0.51, 0.72, 0.75, 0.3), N=256)
+    # 'pbpl_blue_cmap', segmentdata=gen_cdict(0, 0.51, 0.72, 0.6, 0.3), N=256)
 
 orange_cmap = LinearSegmentedColormap(
     'pbpl_orange_cmap', segmentdata=gen_cdict(0.90, 0.39, 0, 0.75, 0.3), N=256)
+
+BlueOrange_cmap = LinearSegmentedColormap.from_list(
+    'BlueOrange_colormap', ['#0083b8', '#ffffff', '#e66400'], 256)
