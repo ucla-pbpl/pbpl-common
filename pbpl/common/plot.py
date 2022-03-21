@@ -7,7 +7,9 @@ from scipy.spatial.transform import Rotation
 def setup_plot():
     mpl.rc('font', size=8.0, family='sans-serif')
     mpl.rc('mathtext', fontset='cm')
+    # mpl.rc('ps', useafm=True)
     mpl.rc('pdf', use14corefonts=True)
+    # mpl.rc('text', usetex=True)
     mpl.rc('lines', linewidth=0.8)
     mpl.rc('xtick.major', size=4, width=0.6)
     mpl.rc('ytick.major', size=4, width=0.6)
@@ -26,6 +28,7 @@ def setup_plot():
         'color', [
             '#0083b8', '#e66400', '#93a661', '#ebc944', '#da1884', '#7e48bd']))
     # girl scouts green is 0x00ae58
+    # #0083b8 = (0.0, 0.51, 0.72)
     mpl.rc('figure', max_open_warning=False)
 
 def gen_cdict(red, green, blue, midpoint, frac):

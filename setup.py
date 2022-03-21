@@ -47,7 +47,8 @@ setup(
     ],
     entry_points = {
         'console_scripts':
-        ['pbpl-common-encode = pbpl.common.encode:main']
+        ['pbpl-common-encode = pbpl.common.encode:main',
+         'pbpl-common-stl-cat  = pbpl.common.stl_cat:main']
     },
     namespace_packages=['pbpl']
 )
